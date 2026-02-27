@@ -1,0 +1,312 @@
+
+
+
+/* ============ RESET ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* ============ MAIN CONTAINER ============ */
+main {
+    min-height: 100%;
+    width: 100%;
+    background-color: #0f0f0f;
+    overflow: auto;
+}
+
+/* ============ HEADER ============ */
+header {
+    background-color: #1a1a2e;
+    padding: 20px 40px;
+    text-align: center;
+    border-bottom: 3px solid #F8CB45;
+}
+
+header h1 {
+    color: #F8CB45;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* ============ FORM SECTION ============ */
+.add-data {
+    width: 100%;
+    background-color: #F8CB45;
+    padding: 30px 40px;
+}
+
+.add-data form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Common style for input, select, button inside form */
+.add-data input,
+.add-data select {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: 15px;
+    outline: none;
+    background-color: #fff;
+    transition: border 0.3s;
+}
+
+.add-data input:focus,
+.add-data select:focus {
+    border: 2px solid #1a1a2e;
+}
+
+.add-data select {
+    cursor: pointer;
+    color: #333;
+}
+
+#submit-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #1a1a2e;
+    color: #F8CB45;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#submit-btn:hover {
+    background-color: #16213e;
+    transform: translateY(-1px);
+}
+
+#submit-btn:active {
+    transform: scale(0.97);
+}
+
+/* When in edit mode, button turns green */
+#submit-btn.editing {
+    background-color: #16a34a;
+    color: white;
+}
+
+/* ============ STATS BAR ============ */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 30px;
+    background-color: #1a1a2e;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 150px;
+}
+
+.stat span {
+    color: #aaa;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat strong {
+    color: #F8CB45;
+    font-size: 24px;
+}
+
+/* ============ SEARCH BAR ============ */
+.search-bar {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #0f0f0f;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #333;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#search-input:focus {
+    border-color: #F8CB45;
+}
+
+#search-input::placeholder {
+    color: #777;
+}
+
+/* ============ PRODUCT CARDS GRID ============ */
+.all-data {
+    display: flex;
+    padding: 25px 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ============ SINGLE PRODUCT CARD ============ */
+.item {
+    background-color: #1e1e2e;
+    padding: 22px 28px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 12px;
+    width: 300px;
+    border: 1px solid #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(248, 203, 69, 0.1);
+}
+
+.item h3 {
+    font-size: 20px;
+    color: #F8CB45;
+    margin-bottom: 4px;
+}
+
+.item .badge {
+    display: inline-block;
+    background-color: #2d2d44;
+    color: #F8CB45;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+    letter-spacing: 0.5px;
+}
+
+.item h4 {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+.item h4 span {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Profit tag */
+.profit {
+    color: #4ade80 !important;
+    font-weight: 700 !important;
+}
+
+.loss {
+    color: #f87171 !important;
+    font-weight: 700 !important;
+}
+
+/* Low stock warning */
+.low-stock-warning {
+    color: #f87171;
+    font-size: 12px;
+    font-weight: 700;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Card action buttons */
+.item .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.edit-btn {
+    padding: 7px 18px;
+    border-radius: 6px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #2563eb;
+}
+
+.remove-btn {
+    padding: 7px 18px;
+    border-radius: 6px;
+    background-color: #ef4444;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ============ EMPTY STATE ============ */
+.empty-message {
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .add-data {
+        padding: 20px 15px;
+    }
+    
+    .add-data input,
+    .add-data select {
+        width: 100%;
+    }
+
+    .stats-bar {
+        gap: 15px;
+    }
+
+    .item {
+        width: 100%;
+    }
+}

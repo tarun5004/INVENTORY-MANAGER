@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>📦 Inventory Management System</h1>
+        </header>
+
+        <!-- Form Section -->
+        <div class="add-data">
+            <form id="product-form">
+                <input type="text" id="productName" placeholder="Product Name" required>
+
+                <!-- category dropdown -->
+                <select id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Groceries">Groceries</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Personal Care">Personal Care</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Stationery">Stationery</option>
+                </select>
+
+                <input type="number" id="costPrice" placeholder="Cost Price (₹)" min="0" required>
+                <input type="number" id="sellingPrice" placeholder="Selling Price (₹)" min="0" required>
+                <input type="number" id="quantity" placeholder="Quantity in Stock" min="0" required>
+                <input type="date" id="expiryDate" required>
+
+                <button type="submit" id="submit-btn">Add Product</button>
+            </form>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat">
+                <span>Total Products</span>
+                <strong id="total-products">0</strong>
+            </div>
+            <div class="stat">
+                <span>Total Stock Value</span>
+                <strong id="total-value">₹0</strong>
+            </div>
+            <div class="stat">
+                <span>Low Stock Items</span>
+                <strong id="low-stock">0</strong>
+            </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products by name.....">
+        </div>
+
+        <!-- Product Cards container -->
+        <div class="all-data" id="all-data"></div>
+        <!-- cards ko hum js ki help se render karuga  -->
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
